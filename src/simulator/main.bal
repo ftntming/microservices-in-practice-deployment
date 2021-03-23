@@ -3,7 +3,8 @@ import ballerina/io;
 import ballerina/runtime;
 import lakwarus/commons as x;
 
-http:Client adminClient = new("http://localhost:30300/Admin");
+// http:Client adminClient = new("http://localhost:30300/Admin");
+http:Client adminClient = new("http://localhost:8085/Admin");
 
 public function main(int interval, int count) returns @tainted error? {
     foreach var i in 1...count {
