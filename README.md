@@ -70,7 +70,9 @@ Add the following,
 ```
 
 under  name: "billing" in target/kubernetes/billing/billing.yaml
+
 under  name: "ordermgt" in target/kubernetes/ordermgt/ordermgt.yaml
+
 under  name: "shipping" in target/kubernetes/shipping/shipping.yaml
 
 And re-deploy
