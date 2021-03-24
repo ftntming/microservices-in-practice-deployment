@@ -9,7 +9,7 @@ http:Client orderMgtClient = new("http://ordermgt-svc:8081/OrderMgt");
 @kubernetes:HPA {
     minReplicas: 1,
     maxReplicas: 2,
-    cpuPercentage: 75,
+    cpuPercentage: 5,
     name: "billing-hpa"
 }
 @kubernetes:Service {
@@ -20,7 +20,7 @@ http:Client orderMgtClient = new("http://ordermgt-svc:8081/OrderMgt");
     livenessProbe: true,
     readinessProbe: true,
     push: true,
-    image: "index.docker.io/$env{DOCKER_USERNAME}/ecommerce-billing:1.0",
+    image: "index.docker.io/$env{DOCKER_USERNAME}/ecommerce-billing:1.1",
     username: "$env{DOCKER_USERNAME}",
     password: "$env{DOCKER_PASSWORD}",
     prometheus: true

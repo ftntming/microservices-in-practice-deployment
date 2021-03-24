@@ -9,7 +9,7 @@ map<x:Order> orderMap = {};
 @kubernetes:HPA {
     minReplicas: 1,
     maxReplicas: 4,
-    cpuPercentage: 75,
+    cpuPercentage: 5,
     name: "ordermgt-hpa"
 }
 @kubernetes:Service {
@@ -17,7 +17,7 @@ map<x:Order> orderMap = {};
 }
 @kubernetes:Deployment {
     name: "ordermgt",
-    image: "index.docker.io/$env{DOCKER_USERNAME}/ecommerce-ordermgt:1.0",
+    image: "index.docker.io/$env{DOCKER_USERNAME}/ecommerce-ordermgt:1.1",
     username: "$env{DOCKER_USERNAME}",
     password: "$env{DOCKER_PASSWORD}",
     push: true,
